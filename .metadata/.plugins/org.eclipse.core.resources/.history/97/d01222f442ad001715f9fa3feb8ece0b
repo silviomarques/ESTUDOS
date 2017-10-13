@@ -1,0 +1,17 @@
+
+public class ContaPoupanca extends Conta {
+
+	//Reescrever o metodo da classe PAI
+	//Overriding
+	
+	@Override
+	public void depositar(double valor) {
+		this.rentabilidade();
+		super.depositar(valor);
+		
+	}
+	
+	protected void rentabilidade() {
+		this.saldo += 1;
+	}
+}

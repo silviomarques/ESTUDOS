@@ -1,0 +1,33 @@
+import java.io.File;
+import java.io.FileWriter;
+
+import javax.swing.JOptionPane;
+
+public class Cliente {
+	private String nome;
+	private String email;
+	private int idade;
+	
+	String arquivoCad = "C:\\Users\\Silvio\\eclipse-workspace\\ExemploAula\\Arquivos\\clientes.txt";
+	
+	public void salvar() {
+		File fl = new File(arquivoCad);
+		
+		if(!fl.exists()) {
+			try {
+				fl.createNewFile(arquivoCad);
+				
+				FileWriter writer = new Filewriter(fl);
+				
+				wirter.writer(this.nome + " - " + this.email + " - " + this.idade);
+						
+				
+			} catch(Exception ex) {
+				return "Erro no sistema: " + ex.getMessage()
+			}
+			
+		}
+		
+		
+	}
+}

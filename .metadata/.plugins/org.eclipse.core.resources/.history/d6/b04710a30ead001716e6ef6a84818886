@@ -1,0 +1,30 @@
+public class Main {
+	
+	public static void main(String args[]) {
+		System.out.println("Hello Guy's");
+		
+		//Instanciar uma classe = Objeto
+		Carro c4 = new Carro();
+		c4.ligar();
+		c4.freio = false ;
+		c4.acelerar(80);
+		c4.desligar();
+		
+		//c4.trocarMarcha();
+		
+		Carro ix35 = new Carro();
+		
+		ContaCorrente c = new ContaCorrente();
+		c.depositar(100);
+		c.sacar(50);
+		c.verSaldo();
+		
+		ContaPoupanca p = new ContaPoupanca();
+		p.depositar(150);
+		p.sacar(75);
+		p.verSaldo();
+		
+		
+	}
+	
+}

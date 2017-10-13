@@ -1,0 +1,93 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Cadastro {
+
+	private JFrame frame;
+	private JTextField jTxtNome;
+	private JTextField jTxtEmail;
+	private JTextField jTxtIdade;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Cadastro window = new Cadastro();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Cadastro() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 187);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Nome:");
+		lblNewLabel.setBounds(12, 13, 56, 16);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("E-mail:");
+		lblNewLabel_1.setBounds(12, 42, 56, 16);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		jTxtNome = new JTextField();
+		jTxtNome.setBounds(56, 10, 364, 22);
+		frame.getContentPane().add(jTxtNome);
+		jTxtNome.setColumns(10);
+		
+		jTxtEmail = new JTextField();
+		jTxtEmail.setBounds(56, 39, 364, 22);
+		frame.getContentPane().add(jTxtEmail);
+		jTxtEmail.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cliente cliente = new Cliente();
+				cliente.setNome(jTxtNome.getText());
+				cliente.setEmail(jTxtEmail.getText());
+				cliente.setIdade(Integer.parseInt(jTxtIdade.getText()));
+				JOptionPane.showMessageDialog(null, cliente.salvar());
+				jTxtNome.setText("");
+				jTxtEmail.setText("");
+				jTxtIdade.setText("");
+			}
+		});
+		btnNewButton.setBounds(296, 104, 124, 25);
+		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblIdade = new JLabel("Idade:");
+		lblIdade.setBounds(12, 75, 56, 16);
+		frame.getContentPane().add(lblIdade);
+		
+		jTxtIdade = new JTextField();
+		jTxtIdade.setBounds(56, 72, 116, 22);
+		frame.getContentPane().add(jTxtIdade);
+		jTxtIdade.setColumns(10);
+	}
+}

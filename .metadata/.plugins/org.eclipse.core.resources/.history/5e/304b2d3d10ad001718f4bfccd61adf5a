@@ -1,0 +1,16 @@
+
+public class ContaPoupanca extends Conta {
+
+	//Reescrever o metodo da classe PAI
+	//Overriding
+	
+	public void sacar(double valor) {
+		this.juros();
+		super.depositar(valor);
+		
+	}
+	
+	private void juros() {
+		this.saldo += 1;
+	}
+}

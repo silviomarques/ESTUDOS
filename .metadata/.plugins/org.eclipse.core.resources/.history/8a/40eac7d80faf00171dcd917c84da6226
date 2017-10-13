@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class IndexServlet extends HttpServlet{
+	
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse res){
+		try {
+			PrintWriter out = res.getWriter();
+			out.println("Olá");
+		}catch(IOException e) {
+			
+		}
+		
+		
+	}
+		
+	@Override
+	public void doPost(HttpServletRequest req, HttpServletResponse res){
+		
+	}
+}
