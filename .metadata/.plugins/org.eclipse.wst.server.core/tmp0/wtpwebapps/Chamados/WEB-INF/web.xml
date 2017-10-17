@@ -37,7 +37,7 @@
     <servlet-name>ListarChamados</servlet-name>
     <url-pattern>/ListarChamados</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>EditarChamadoServlet</servlet-name>
     <url-pattern>/EditarChamado</url-pattern>
   </servlet-mapping>
@@ -47,4 +47,18 @@
     <servlet-name>EditarChamadoServlet</servlet-name>
     <servlet-class>EditarChamadoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+  	<session-timeout>60</session-timeout>
+  </session-config>
 </web-app>
